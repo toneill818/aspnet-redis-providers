@@ -62,6 +62,11 @@ namespace Microsoft.Web.Redis
                 {
                     _configOption.SyncTimeout = configuration.OperationTimeoutInMilliSec;
                 }
+
+                if (configuration.WriteBuffer != 0)
+                {
+                    _configOption.WriteBuffer = configuration.WriteBuffer;
+                }
             }
             CreateMultiplexer();
         }
